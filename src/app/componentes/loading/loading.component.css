@@ -1,0 +1,7 @@
+.transparent {
+    background-color: rgba(0, 0, 0, 0.75); /* Fondo negro con 75% de transparencia */
+    width: 100%; /* Ajusta el ancho según tus necesidades */
+    height: 100%; /* Ajusta la altura según tus necesidades */
+    color: white; /* Color del texto dentro del div */
+    padding: 20px; /* Espaciado interno */
+}

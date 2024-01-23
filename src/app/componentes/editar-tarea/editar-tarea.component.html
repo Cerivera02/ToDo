@@ -1,0 +1,98 @@
+<div class="card">
+    <div class="card-header">Editar Tarea</div>
+    <div class="card-body">
+  
+      <form (submit)="guardarTarea()">
+        <div class="input-group mb-3">
+          <label for="materia" class="input-group-text">Materia</label>
+          <select class="form-select" id="materia" [(ngModel)]="tarea.materia_id" name="materia" required>
+            @for (materias of materias; track $index) {
+                <option value="{{materias.id}}">{{materias.nombre}}</option>
+            }
+          </select>
+        </div>
+  
+        <div class="input-group mb-3">
+          <span for="descripcion" class="input-group-text">Descripción</span>
+          <textarea class="form-control resize-none" id="descripcion" [(ngModel)]="tarea.descripcion" name="descripcion" required></textarea>
+        </div>
+  
+        <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+          <button type="submit" class="btn btn-success position-relative">
+            Guardar Tarea
+            <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-primary">
+              99+
+              <span class="visually-hidden">Tareas por hacer</span>
+            </span>
+          </button>
+        </div>
+      </form>
+  
+    </div>
+  </div>
+  
+
+<!-- <div class="card">
+    <div class="card-header">Editar Tarea</div>
+    <div class="card-body">
+
+        <form (submit)="guardarTarea()">
+            <div class="input-group mb-3">
+                <label class="input-group-text" for="materia" [(ngModel)]="tarea.materia" name="materia">Options</label>
+                <select class="form-select" id="materia">
+                    <option selected>Choose...</option>
+                    <option value="1">One</option>
+                    <option value="2">Two</option>
+                    <option value="3">Three</option>
+                </select>
+            </div>
+            <div class="input-group mb-3">
+                <span class="input-group-text" for="descripcion">Tarea</span>
+                <textarea class="form-control resize-none" id="descripcion" [(ngModel)]="tarea.descripcion" aria-label="With textarea"></textarea>
+            </div>
+
+            <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                <button type="submit" class="btn btn-success position-relative">
+                    Guardar Tarea
+                    <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-primary">
+                        99+
+                        <span class="visually-hidden">Tareas por hacer</span>
+                    </span>
+                </button>
+            </div>
+        </form>
+
+    </div>
+</div> -->
+
+
+<!-- 
+<div class="card">
+    <div class="card-header">Editar Tarea</div>
+    <div class="card-body">
+        <form (submit)="guardarTarea()">
+            <div class="mb-3">
+                <label for="materia" class="form-label">Materia</label>
+                <select class="form-select" id="materia" [(ngModel)]="tarea.materia" name="materia" required>
+                    <option value="1">Materia 1</option>
+                    <option value="2">Materia 2</option>
+                    <option value="3">Materia 3</option>
+                </select>
+            </div>
+            <div class="mb-3">
+                <label for="descripcion" class="form-label">Descripción</label>
+                <textarea class="form-control resize-none" id="descripcion" [(ngModel)]="tarea.descripcion"
+                    name="descripcion" required></textarea>
+            </div>
+            <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                <button type="submit" class="btn btn-success position-relative">
+                    Guardar Tarea
+                    <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-primary">
+                        99+
+                        <span class="visually-hidden">Tareas por hacer</span>
+                    </span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div> -->

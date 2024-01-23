@@ -1,0 +1,64 @@
+<!-- listar-tareas.component.html -->
+
+@if (!cargandoTareas) {
+    <app-loading [cargando]="cargandoTareas" (cambioDeCargando)="cambiarCargando($event)"></app-loading>
+} @else {
+
+<div class="table-responsive-lg">
+  <table class="table table-hover table-borderless table-primary align-middle">
+    <thead class="table-dark">
+      <tr>
+        <th>Materia</th>
+        <th>Tarea</th>
+        <th>Acciones</th>
+      </tr>
+    </thead>
+    <tbody class="table-group-divider">
+      <tr class="table-light" *ngFor="let tarea of tareas">
+        <td>{{ tarea.materia }}</td>
+        <td>{{ tarea.tarea_descripcion }}</td>
+        <td>
+          <div class="btn-group" role="group" aria-label="Button group name">
+            <button type="button" class="btn btn-primary" [routerLink]="'/editar-tarea/' + tarea.tarea_id">
+              Editar
+            </button>
+            <button type="button" class="btn btn-danger" (click)="eliminarTarea(tarea.tarea_id)">
+              Borrar
+            </button>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+}
+
+<!-- <div class="table-responsive-lg">
+    <table class="table table-hover table-borderless table-primary align-middle">
+        <thead class="table-dark">
+            <tr>
+                <th>Materia</th>
+                <th>Tarea</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody class="table-group-divider">
+            <tr class="table-light">
+                <td>Matematicas</td>
+                <td>Realizar las actividades 5 6 7</td>
+                <td>
+
+                    <div class="btn-group" role="group" aria-label="Button group name">
+                        <button type="button" class="btn btn-primary" routerLink="/editar-tarea/1">
+                            Editar
+                        </button>
+                        <button type="button" class="btn btn-danger">
+                            Borrar
+                        </button>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div> -->

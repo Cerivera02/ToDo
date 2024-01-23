@@ -1,0 +1,36 @@
+<div class="card">
+    <div class="card-header">Agregar Tareas</div>
+    <div class="card-body">
+
+        <form (submit)="crearTarea()">
+            <div class="input-group mb-3">
+                <label class="input-group-text" for="inputGroupSelect01">Materias</label>
+                <select class="form-select" id="materia" name="materia" [(ngModel)]="tarea.materia_id" required>
+                    <option disabled>Elige una Materia</option>
+                    @for (materias of materias; track $index) {
+                        <option value="{{materias.id}}">{{materias.nombre}}</option>
+                    }
+                </select>
+              </div>
+              <div class="input-group mb-3">
+                <span class="input-group-text">Tarea</span>
+                <textarea class="form-control resize-none" aria-label="With textarea" id="descripcion" name="descripcion" [(ngModel)]="tarea.descripcion" required></textarea>
+              </div>
+
+            <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                <button type="reset" class="btn btn-danger">
+                    Limpiar
+                </button>
+
+                <button type="submit" class="btn btn-success position-relative">
+                    Guardar Tarea
+                    <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-primary">
+                        99+
+                        <span class="visually-hidden">Tareas por hacer</span>
+                    </span>
+                </button>
+            </div>
+        </form>
+
+    </div>
+</div>
